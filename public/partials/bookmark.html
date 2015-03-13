@@ -1,0 +1,23 @@
+<h1 class="text-center">Bookmark</h1>
+<p ng-show="message.text">
+  {{message.text}}
+</p>
+
+<form ng-submit="save()">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" ng-model="bookmark.title" required />
+  </div>
+
+  <div class="form-group">
+    <label for="url">URL</label>
+    <input type="text" class="form-control" id="url" name="url" ng-model="bookmark.url" required />
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary">
+      Save
+    </button>
+    <a href="#/" class="btn btn-default">Back</a>
+  </div>
+</form>

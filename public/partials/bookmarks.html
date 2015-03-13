@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h1 class="text-center">Welcome to fav-organizer!</h1>
+</div>
+<p ng-show="message.text">
+  {{message.text}}
+</p>
+<a class="btn btn-primary" ng-href="#/bookmark">
+  New bookmark
+</a>
+<input ng-model="bookmarkFilter" type="search" placeholder="Title"/>
+<p ng-show="bookmarks.length">Bookmarks added: {{ bookmarks.length }}</p>
+<p class="text-info" ng-hide="bookmarks.length">
+  The are no bookmarks to list
+</p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tr>
+      <th>TITLE</th>
+      <th>URL</th>
+      <th class="text-center">ACTION</th>
+    </tr>
+    <tr ng-repeat="bookmark in bookmarks | filter: bookmarkFilter">
+      <td>
+        <a ng-href="#/bookmark/{{bookmark._id}}">{{bookmark.title}}</a>
+      </td>
+      <td>
+        <a href={{bookmark.url}}>{{bookmark.url}}</a>
+      </td>
+      <td>
+        <button ng-click="remove(bookmark)" class="btn btn-warning">Remove</button>
+      </td>
+    </tr>
+  </table>
+</div>

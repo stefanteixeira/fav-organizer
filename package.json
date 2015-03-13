@@ -1,0 +1,18 @@
+{
+  "name": "fav-organizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Teixeira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.12.0",
+    "ejs": "^2.3.1",
+    "express": "^4.12.2",
+    "express-load": "^1.1.14",
+    "method-override": "^2.3.1"
+  }
+}
