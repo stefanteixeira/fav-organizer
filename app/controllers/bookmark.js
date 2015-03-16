@@ -1,58 +1,83 @@
-var bookmarks = [
-  {_id: 1, title: 'Blog Stefan', url: 'http://stefanteixeira.com.br'},
-  {_id: 2, title: 'Google', url: 'https://www.google.com.br'},
-  {_id: 3, title: 'GitHub', url: 'https://github.com'},
-  {_id: 4, title: 'Twitter', url: 'https://twitter.com'}
-];
+module.exports = function(app) {
 
-var ID_BOOKMARK_INC = 4;
+  var Bookmark = app.models.bookmark;
 
-module.exports = function() {
   var controller = {};
+
   controller.listBookmarks = function(req, res) {
-    res.json(bookmarks);
+    Bookmark.find().exec()
+      .then(
+        function(bookmarks) {
+          res.json(bookmarks);
+        },
+        function(err) {
+          console.log(err);
+          res.status(500).json(err);
+        }
+      );
   };
 
   controller.getBookmark = function(req, res) {
     var bookmarkId = req.params.id;
-
-    var bookmark = bookmarks.filter(function(bookmark) {
-      return bookmark._id == bookmarkId;
-    })[0];
-
-    bookmark ? res.json(bookmark) : res.status(404).send('Bookmark not found');
+    Bookmark.findById(bookmarkId).exec()
+      .then(
+        function(bookmark) {
+          if(!bookmark) throw new Error('Bookmark not found');
+          res.json(bookmark);
+        },
+        function(err) {
+          console.log(err);
+          res.status(400).json(err);
+        }
+      );
   };
 
   controller.deleteBookmark = function(req, res) {
     var bookmarkId = req.params.id;
-    bookmarks = bookmarks.filter(function(bookmark) {
-      return bookmark._id != bookmarkId;
-    });
-    res.status(204).send();
+    Bookmark.remove({"_id": bookmarkId}).exec()
+      .then(
+        function() {
+          res.end();
+        },
+        function(err) {
+          return console.error(err);
+        }
+      );
   };
 
   controller.saveBookmark = function(req, res) {
-    var bookmark = req.body;
-    bookmark = bookmark._id ? update(bookmark) : add(bookmark);
-    res.json(bookmark);
+    var bookmarkId = req.body._id;
+    if(bookmarkId) {
+      Bookmark.findByIdAndUpdate(bookmarkId, req.body).exec()
+        .then(
+          function(bookmark) {
+            res.json(bookmark);
+          },
+          function(err) {
+            console.error(err);
+            res.status(500).json(err);
+          }
+        );
+    } else {
+      Bookmark.create(req.body)
+        .then(
+          function(bookmark) {
+            res.status(201).json(bookmark);
+          },
+          function(err) {
+            console.log(err);
+            res.status(500).json(err);
+          }
+        );
+    }
   };
 
   function add(newBookmark) {
-    newBookmark._id = ++ID_BOOKMARK_INC;
-    bookmarks.push(newBookmark);
 
-    return newBookmark;
   }
 
   function update(bookmarkToUpdate) {
-    bookmarks = bookmarks.map(function(bookmark) {
-      if(bookmark._id == bookmarkToUpdate._id) {
-        bookmark = bookmarkToUpdate;
-      }
-      return bookmark;
-    });
 
-    return bookmarkToUpdate;
   }
 
   return controller;

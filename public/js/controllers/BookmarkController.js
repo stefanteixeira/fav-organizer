@@ -1,7 +1,5 @@
 angular.module('fav-organizer').controller('BookmarkController',
- function($scope, $routeParams, $resource) {
-
-   var Bookmark = $resource('/bookmarks/:id');
+ function($scope, $routeParams, Bookmark) {
 
    if($routeParams.bookmarkId) {
      Bookmark.get({id: $routeParams.bookmarkId},
@@ -23,7 +21,7 @@ angular.module('fav-organizer').controller('BookmarkController',
      $scope.bookmark.$save()
         .then(function() {
           $scope.message = {
-            text = 'Bookmark saved successfully'
+            text: 'Bookmark saved successfully'
           },
           $scope.bookmark = new Bookmark();
         })

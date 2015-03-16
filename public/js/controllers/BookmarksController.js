@@ -1,13 +1,9 @@
-angular.module('fav-organizer').controller('BookmarksController', function($scope, $resource) {
+angular.module('fav-organizer').controller('BookmarksController', function($scope, Bookmark) {
   $scope.bookmarks = [];
 
   $scope.bookmarkFilter = '';
 
   $scope.message = {text: ''};
-
-  //Gets the specific bookmark in server-side
-  //Remember that this route only exists in server-side!
-  var Bookmark = $resource('/bookmarks/:id');
 
   function findBookmarks() {
     Bookmark.query(
