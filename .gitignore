@@ -1,2 +1,4 @@
 node_modules/
 public/vendor/
+dist/
+settings.json

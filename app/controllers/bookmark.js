@@ -1,3 +1,5 @@
+var sanitize = require('mongo-sanitize');
+
 module.exports = function(app) {
 
   var Bookmark = app.models.bookmark;
@@ -33,7 +35,7 @@ module.exports = function(app) {
   };
 
   controller.deleteBookmark = function(req, res) {
-    var bookmarkId = req.params.id;
+    var bookmarkId = sanitize(req.params.id);
     Bookmark.remove({"_id": bookmarkId}).exec()
       .then(
         function() {
@@ -47,6 +49,12 @@ module.exports = function(app) {
 
   controller.saveBookmark = function(req, res) {
     var bookmarkId = req.body._id;
+
+    var bookmarkData = {
+      "title": req.body.title,
+      "url": req.body.url
+    };
+
     if(bookmarkId) {
       Bookmark.findByIdAndUpdate(bookmarkId, req.body).exec()
         .then(

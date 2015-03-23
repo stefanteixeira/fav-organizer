@@ -1,11 +1,19 @@
+function verifyAuth(req, res, next) {
+  if(req.isAuthenticated()) {
+    return next();
+  } else {
+    res.status('401').json('Unauthorized');
+  }
+}
+
 module.exports = function(app) {
   var controller = app.controllers.bookmark;
 
   app.route('/bookmarks')
-     .get(controller.listBookmarks)
-     .post(controller.saveBookmark);
+     .get(verifyAuth, controller.listBookmarks)
+     .post(verifyAuth, controller.saveBookmark);
 
   app.route('/bookmarks/:id')
-     .get(controller.getBookmark)
-     .delete(controller.deleteBookmark);
+     .get(verifyAuth, controller.getBookmark)
+     .delete(verifyAuth, controller.deleteBookmark);
 };

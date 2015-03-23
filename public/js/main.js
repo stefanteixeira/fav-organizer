@@ -1,18 +1,26 @@
-angular.module('fav-organizer', ['ngRoute', 'ngResource']).config(function($routeProvider) {
-  $routeProvider.when('/bookmarks', {
-    templateUrl: 'partials/bookmarks.html',
-    controller: 'BookmarksController'
-  });
+angular.module('fav-organizer', ['ngRoute', 'ngResource'])
+  .config(function($routeProvider, $httpProvider) {
 
-  $routeProvider.when('/bookmark/:bookmarkId', {
-    templateUrl: 'partials/bookmark.html',
-    controller: 'BookmarkController'
-  });
+    $httpProvider.interceptors.push('authInterceptor');
 
-  $routeProvider.when('/bookmark', {
-    templateUrl: 'partials/bookmark.html',
-    controller: 'BookmarkController'
-  });
+    $routeProvider.when('/bookmarks', {
+      templateUrl: 'partials/bookmarks.html',
+      controller: 'BookmarksController'
+    });
 
-  $routeProvider.otherwise({redirectTo: '/bookmarks'});
+    $routeProvider.when('/bookmark/:bookmarkId', {
+      templateUrl: 'partials/bookmark.html',
+      controller: 'BookmarkController'
+    });
+
+    $routeProvider.when('/bookmark', {
+      templateUrl: 'partials/bookmark.html',
+      controller: 'BookmarkController'
+    });
+
+    $routeProvider.when('/auth', {
+      templateUrl: 'partials/auth.html'
+    });
+
+    $routeProvider.otherwise({redirectTo: '/bookmarks'});
 });

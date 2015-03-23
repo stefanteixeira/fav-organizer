@@ -15,10 +15,19 @@
     "express": "^4.12.2",
     "express-load": "^1.1.14",
     "express-session": "^1.10.4",
+    "helmet": "^0.7.0",
     "method-override": "^2.3.1",
+    "mongo-sanitize": "^1.0.0",
     "mongodb": "^1.4.34",
     "mongoose": "^3.8.25",
+    "mongoose-findorcreate": "^0.1.2",
+    "nconf": "^0.7.1",
     "passport": "^0.2.1",
     "passport-github": "^0.1.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0"
   }
 }
