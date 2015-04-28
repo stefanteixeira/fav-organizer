@@ -34,8 +34,8 @@ var webDriverDecoratorChrome = {
     "server": {
       "type": "sauceLabs",
       "configuration": {
-        "user": 'stefanteixeira',
-        "accessKey": 'abd48324-b1fb-40be-8649-4d991525972a'
+        "user": 'fav-organizer',
+        "accessKey": '67f84d23-778a-4def-b579-c98c363a097f'
       }
     }
 
