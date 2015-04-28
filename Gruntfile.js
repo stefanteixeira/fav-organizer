@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-ng-annotate');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.initConfig({
     copy: {
@@ -39,6 +40,15 @@ module.exports = function(grunt) {
       scripts: {
         expand: true,
         src: ['dist/public/js/**/*.js']
+      }
+    },
+
+    mochaTest: {
+      all: {
+        options: {
+          reporter: 'spec'
+        },
+        src: ['test/api/*.js']
       }
     }
 

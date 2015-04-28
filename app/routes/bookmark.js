@@ -10,7 +10,7 @@ module.exports = function(app) {
   var controller = app.controllers.bookmark;
 
   app.route('/bookmarks')
-     .get(verifyAuth, controller.listBookmarks)
+     .get(controller.listBookmarks)
      .post(verifyAuth, controller.saveBookmark);
 
   app.route('/bookmarks/:id')
