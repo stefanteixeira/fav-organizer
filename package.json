@@ -19,7 +19,7 @@
     "method-override": "^2.3.1",
     "mongo-sanitize": "^1.0.0",
     "mongodb": "^1.4.34",
-    "mongoose": "^3.8.25",
+    "mongoose": "3.8.25",
     "mongoose-findorcreate": "^0.1.2",
     "nconf": "^0.7.1",
     "passport": "^0.2.1",
@@ -37,6 +37,8 @@
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
-    "karma-jasmine": "^0.3.5"
+    "karma-coverage": "^0.3.1",
+    "karma-jasmine": "^0.3.5",
+    "karma-sauce-launcher": "^0.2.10"
   }
 }
