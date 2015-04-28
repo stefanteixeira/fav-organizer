@@ -2,7 +2,7 @@ var nconf = require('nconf');
 nconf.file('settings.json');
 
 exports.config = {
-  specs: ['../test/e2e/**/*.js'],
+  specs: ['../test/ui/**/*.js'],
   seleniumAddress: 'http://localhost:4444/wd/hub',
   onPrepare: function() {
     browser.driver.get('http://localhost:3000');

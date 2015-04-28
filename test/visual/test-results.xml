@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<testsuites name="Tests" time="37.032" tests="5" failures="3" disabled="0" errors="0">
+  <testsuite name="Take screenshots (Chrome)" time="36.304" tests="3" failures="2" disabled="0" skipped="0" errors="0" hostname="new-host-6.home" timestamp="2015-04-28T22:04:35.934Z">
+    <testsuite name="Visual Regression Tests" time="23.293" tests="3" failures="2" disabled="0" skipped="0" errors="0" hostname="new-host-6.home" timestamp="2015-04-28T22:04:48.442Z">
+      <testcase name="should load the page" time="10.498">
+        <failure type="false == true" message="AssertionError: false == true&#xA;    at Context.&lt;anonymous> (test/visual/tests/index.js:9:12)"/>
+      </testcase>
+      <testcase name="signin page screenshot" time="2.279"/>
+      <testcase name="should perform a login" time="10.515">
+        <failure type="NoSuchElement(7): no such element&#xA;  (Session info: chrome=39.0.2171.65)&#xA;  (Driver info: chromedriver=2.11.298604 (75ea2fdb5c87f133a8e1b8da16f6091fb7d5321e),platform=Windows NT 6.1 SP1 x86_64)" message="Error: NoSuchElement(7): no such element&#xA;  (Session info: chrome=39.0.2171.65)&#xA;  (Driver info: chromedriver=2.11.298604 (75ea2fdb5c87f133a8e1b8da16f6091fb7d5321e),platform=Windows NT 6.1 SP1 x86_64)&#xA;    at PageObject.extend.login (test/visual/lib/pages/application.js:40:12)&#xA;    at Context.&lt;anonymous> (test/visual/tests/index.js:19:22)"/>
+      </testcase>
+    </testsuite>
+  </testsuite>
+  <testsuite name="Visual Regression Tests" time="0.707" tests="2" failures="1" disabled="0" skipped="0" errors="0" hostname="new-host-6.home" timestamp="2015-04-28T22:05:12.239Z">
+    <testcase name="initialize tests" time="0.003"/>
+    <testsuite name="Kobold" time="0.008" tests="1" failures="1" disabled="0" skipped="0" errors="0" hostname="new-host-6.home" timestamp="2015-04-28T22:05:12.935Z">
+      <testsuite name="chrome 39 - Visual Regression Tests signin page screenshot - 1" time="0.006" tests="1" failures="1" disabled="0" skipped="0" errors="0" hostname="new-host-6.home" timestamp="2015-04-28T22:05:12.936Z">
+        <testcase name="is an addition" time="0.006">
+          <failure type="Screen is new: chrome-39_Visual-Regression-Tests-signin-page-screenshot_1" message="Error: Screen is new: chrome-39_Visual-Regression-Tests-signin-page-screenshot_1"/>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
