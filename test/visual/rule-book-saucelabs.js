@@ -67,7 +67,8 @@ var webDriverDecoratorFirefox = {
       "capabilities": {
         "browserName": "firefox",
         "version": "35",
-        "platform": "Windows 7"
+        "platform": "Windows 7",
+        "testName": "Visual Regression Tests"
       }
     },
 
@@ -117,7 +118,7 @@ module.exports = {
       "implicitTimeOut": 10000,
       "windowWidth": 1920,
       "windowHeight": 1024,
-      "webBaseUrl": "http://localhost:3000/#/auth"
+      "webBaseUrl": "http://54.149.253.66:3000/#/auth"
     }
   },
 

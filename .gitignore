@@ -4,3 +4,4 @@ dist/
 config/coverage/
 .tmp/
 settings.json
+test/visual/test-results.xml

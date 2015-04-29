@@ -18,7 +18,7 @@ var Application = PageObject.extend(
         "signin": "#signin",
         "login": "#login_field",
         "password": "#password",
-        "btnOk": "#commit"
+        "btnOk": "[name='commit']"
       });
 
       this.addLoadSelectors(["signin"]);

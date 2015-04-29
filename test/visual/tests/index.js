@@ -19,4 +19,10 @@ describe('Visual Regression Tests', function() {
     this.application.login(nconf.get('login'), nconf.get('pass'));
   });
 
+  it('home page screenshot', function(done) {
+    this.application.capture(this.test.fullTitle()).then(function() {
+      done();
+    });
+  });
+
 });
