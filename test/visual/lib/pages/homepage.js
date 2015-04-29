@@ -11,9 +11,10 @@ var HomePage = PageObject.extend(
 
       this.setSelectors({
         "newBookmark": "#btnNewBookmark",
+        "list": ".table-responsive"
       });
 
-      this.addLoadSelectors(["newBookmark"]);
+      this.addLoadSelectors(["newBookmark", "list"]);
     },
 
     /**
@@ -23,7 +24,7 @@ var HomePage = PageObject.extend(
      * @return {object[]}
      */
     blackOut: function() {
-      return [];
+      return [this.getElement("list")];
     }
   },
 

@@ -20,7 +20,8 @@ describe('Visual Regression Tests', function() {
   });
 
   it('home page screenshot', function(done) {
-    this.application.capture(this.test.fullTitle()).then(function() {
+    var homePage = this.application.getHomePage();
+    homePage.capture(this.test.fullTitle()).then(function() {
       done();
     });
   });

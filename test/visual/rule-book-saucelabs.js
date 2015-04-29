@@ -67,8 +67,7 @@ var webDriverDecoratorFirefox = {
       "capabilities": {
         "browserName": "firefox",
         "version": "35",
-        "platform": "Windows 7",
-        "testName": "Visual Regression Tests"
+        "platform": "Windows 7"
       }
     },
 
