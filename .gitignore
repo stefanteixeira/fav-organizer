@@ -5,3 +5,5 @@ config/coverage/
 .tmp/
 settings.json
 test/visual/test-results.xml
+test/visual/screenshots/build/*.png
+test/visual/screenshots/highlight/*.png

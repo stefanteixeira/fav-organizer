@@ -26,7 +26,8 @@ var webDriverDecoratorChrome = {
       "capabilities": {
         "browserName": "chrome",
         "version": "39",
-        "platform": "Windows 7"
+        "platform": "Windows 7",
+        "name": "Visual Regression Tests"
       }
     },
 
@@ -67,7 +68,8 @@ var webDriverDecoratorFirefox = {
       "capabilities": {
         "browserName": "firefox",
         "version": "35",
-        "platform": "Windows 7"
+        "platform": "Windows 7",
+        "name": "Visual Regression Tests"
       }
     },
 
