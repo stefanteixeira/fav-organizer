@@ -1,3 +1,8 @@
+general:
+  artifacts:
+    - "coverage"
+    - "report/plato"
+
 dependencies:
   override:
     - npm install -g bower grunt-cli grunt
@@ -9,3 +14,4 @@ test:
     - grunt mochaTest
     - node_modules/preceptor/bin/preceptor test/visual/rule-book-saucelabs.js
     - node_modules/protractor/bin/protractor config/protractor.js
+    - grunt plato
