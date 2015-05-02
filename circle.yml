@@ -1,6 +1,6 @@
 general:
   artifacts:
-    - "coverage/Firefox 35.0.0 (Windows 7)"
+    - "config/coverage"
     - "report/plato"
 
 dependencies:
