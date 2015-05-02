@@ -3,7 +3,7 @@ public/vendor/
 dist/
 config/coverage/
 .tmp/
-settings.json
+report/plato/
 test/visual/test-results.xml
-test/visual/screenshots/build/*.png
-test/visual/screenshots/highlight/*.png
+test/visual/screenshots/build/
+test/visual/screenshots/highlight/

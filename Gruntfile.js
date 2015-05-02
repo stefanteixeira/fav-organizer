@@ -7,6 +7,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-plato');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
     copy: {
@@ -43,12 +45,26 @@ module.exports = function(grunt) {
       }
     },
 
+    karma: {
+      saucelabs: {
+        configFile: 'config/karma.config.js'
+      }
+    },
+
     mochaTest: {
       all: {
         options: {
           reporter: 'spec'
         },
         src: ['test/api/*.js']
+      }
+    },
+
+    plato: {
+      report: {
+        files: {
+          'report/plato': ['app/**/*.js', 'public/js/**/*.js']
+        }
       }
     }
 

@@ -1,6 +1,6 @@
 var bookmarkPage = function() {
   this.open = function() {
-    browser.get('http://localhost:3000/#/bookmark');
+    browser.get('http://54.149.253.66:3000/#/bookmark');
   };
 
   this.saveBookmark = function(title, url) {
