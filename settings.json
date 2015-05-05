@@ -1,7 +1,7 @@
 {
   "clientID": "1474ccc75d304bcc842f",
   "clientSecret": "557e81d0abb6ad96ad0b540eea75fb1f5cfceb68",
-  "callbackURL": "http://54.149.253.66/:3000/auth/github/callback",
+  "callbackURL": "http://54.149.253.66:3000/auth/github/callback",
   "login": "fav-organizer",
   "pass": "favorganize1",
   "accessKey": "67f84d23-778a-4def-b579-c98c363a097f"
