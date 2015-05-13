@@ -2,6 +2,7 @@ general:
   artifacts:
     - "config/coverage"
     - "report/plato"
+    - "test/visual/screenshots"
 
 dependencies:
   override:
