@@ -2,6 +2,28 @@
 // Generated on Sun Mar 29 2015 21:21:37 GMT-0300 (BRT)
 
 module.exports = function(config) {
+
+  var customLaunchers = {
+    chrome_win: {
+      base: 'SauceLabs',
+      browserName: 'chrome',
+      version: '39',
+      platform: 'Windows 7'
+    },
+    firefox_win: {
+      base: 'SauceLabs',
+      browserName: 'firefox',
+      version: '35',
+      platform: 'Windows 8'
+    },
+    android: {
+      base: 'SauceLabs',
+      browserName: 'android',
+      version: '4.4',
+      platform: 'Linux'
+    }
+  };
+
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -71,24 +93,11 @@ module.exports = function(config) {
     },
 
     // define browsers
-    customLaunchers: {
-      chrome_win: {
-        base: 'SauceLabs',
-        browserName: 'chrome',
-        version: '39',
-        platform: 'Windows 7'
-      },
-      firefox_win: {
-        base: 'SauceLabs',
-        browserName: 'firefox',
-        version: '35',
-        platform: 'Windows 7'
-      }
-    },
+    customLaunchers: customLaunchers,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['chrome_win', 'firefox_win'],
+    browsers: Object.keys(customLaunchers),
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

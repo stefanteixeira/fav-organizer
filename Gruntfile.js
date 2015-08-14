@@ -48,6 +48,12 @@ module.exports = function(grunt) {
     karma: {
       saucelabs: {
         configFile: 'config/karma.config.js'
+      },
+      local: {
+        configFile: 'config/karma.config.js',
+        reporters: ['progress', 'coverage'],
+        singleRun: false,
+        browsers: ['Chrome']
       }
     },
 
