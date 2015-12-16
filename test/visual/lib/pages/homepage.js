@@ -29,7 +29,7 @@ var HomePage = PageObject.extend(
   },
 
   {
-    URL: "http://54.149.253.66:3000/#/bookmarks",
+    URL: "http://52.32.97.145:3000/#/bookmarks",
     EXPECTED_URL: "/"
   }
 );

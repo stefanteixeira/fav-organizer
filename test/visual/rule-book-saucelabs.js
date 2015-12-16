@@ -119,7 +119,7 @@ module.exports = {
       "implicitTimeOut": 10000,
       "windowWidth": 1920,
       "windowHeight": 1024,
-      "webBaseUrl": "http://54.149.253.66:3000/#/auth"
+      "webBaseUrl": "http://52.32.97.145:3000/#/auth"
     }
   },
 

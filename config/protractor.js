@@ -12,7 +12,7 @@ exports.config = {
   specs: ['../test/ui/**/*.js'],
   // seleniumAddress: 'http://localhost:4444/wd/hub',
   onPrepare: function() {
-    browser.driver.get('http://54.149.253.66:3000/#/auth');
+    browser.driver.get('http://52.32.97.145:3000/#/auth');
     browser.driver.findElement(by.id('signin')).click();
     browser.driver.findElement(by.id('login_field')).sendKeys(nconf.get('login'));
     browser.driver.findElement(by.id('password')).sendKeys(nconf.get('pass'));
